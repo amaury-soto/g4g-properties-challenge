@@ -1,0 +1,28 @@
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleBadgeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+
+  &.variant2 {
+    align-items: flex-end; 
+  }
+}
+
+.badgeContainer {
+  width: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  &.variant2 {
+    justify-content: flex-end;
+  }
+}
+.mediaContainer {
+  display: flex;
+  justify-content: space-around;
+}
