@@ -118,21 +118,15 @@ function App() {
 
       <br />
       <div>
-        <div className={"customCardsContainer"}>
-          <Card
-            mediaSrc={macImg}
-            title="Image title"
-            subtitle="Image Subtitle"
-          />
-          <br />
-          <Card
-            mediaSrc="./video.mp4"
-            thumbnailSrc={collabsImg}
-            isVideo
-            title="Video title"
-            subtitle="Video subtitle"
-          />
-        </div>
+        <Card mediaSrc={macImg} title="Image title" subtitle="Image Subtitle" />
+        <br />
+        <Card
+          mediaSrc="./video.mp4"
+          thumbnailSrc={collabsImg}
+          isVideo
+          title="Video title"
+          subtitle="Video subtitle"
+        />
       </div>
     </div>
   );
