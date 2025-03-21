@@ -23,17 +23,17 @@ const Badge: React.FC<BadgeProps> = ({
   const iconSrc = badgeIcon ? iconMap[badgeIcon] : null;
 
   return (
-    <span className={`${styles.badge} ${styles[variant]}`}>
+    <span className={`${styles.badge} ${styles[`badge--${variant}`]}`}>
       {iconSrc && (
-        <span className={styles.icon}>
+        <span className={`${styles.badge__icon}`}>
           <img
             src={iconSrc}
             alt={`${badgeIcon}-logo`}
-            className={styles.badgeIcon}
+            className={styles.badge__iconImg}
           />
         </span>
       )}
-      <span>{text}</span>
+      <span className={styles.badge__text}>{text}</span>
     </span>
   );
 };

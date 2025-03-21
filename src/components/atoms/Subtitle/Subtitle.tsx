@@ -16,7 +16,9 @@ const Subtitle: React.FC<SubtitleProps> = ({
   const Tag = as;
 
   return (
-    <Tag className={`${styles.subtitle} ${styles[variant]}`}>{subtitle}</Tag>
+    <Tag className={`${styles.subtitle} ${styles[`subtitle--${variant}`]}`}>
+      {subtitle}
+    </Tag>
   );
 };
 

@@ -5,36 +5,41 @@
   border-radius: 20px; 
   font-weight: bold;
   border: 2px solid transparent;
-}
 
-.icon {
-  margin-right: 0.5rem;
-  display: flex;
-  align-items: center;
+  &__icon {
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
 
-  width: 20px;  
-  height: 20px; 
-  
-  img {
-    max-width: 100%; 
-    height: auto;    
+    width: 20px;  
+    height: 20px;  
+
+    &Img {  
+      max-width: 100%; 
+      height: auto;    
+    }
+  }
+
+  &__text {  
+    color: inherit; 
   }
 }
 
-.variant1 {
+
+.badge--variant1 {  
   background-color: #000; 
   border: 2px solid #fff; 
 
-  span {
+  .badge__text {
     color: #fff; 
   }
 }
 
-.variant2 {
+.badge--variant2 { 
   background-color: #fff; 
   border: 2px solid #000; 
-  
-  span {
+
+  .badge__text {
     color: #000; 
   }
 }
