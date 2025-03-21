@@ -6,7 +6,7 @@ import playIcon from "../../../assets/play.png";
 import { EVariant } from "../../../types/enums";
 
 interface CardProps {
-  mediaSrc?: string;
+  mediaSrc: string;
   thumbnailSrc?: string;
   isVideo?: boolean;
   title: string;

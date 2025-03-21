@@ -10,7 +10,7 @@ import { EBadgeIcon, ETypes, EVariant } from "../../../types/enums";
 interface CardItem {
   mediaSrc: string;
   thumbnailSrc?: string;
-  isVideo: boolean;
+  isVideo?: boolean;
   title: string;
   subtitle: string;
 }

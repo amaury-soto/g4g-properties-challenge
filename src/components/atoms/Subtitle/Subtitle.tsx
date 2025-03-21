@@ -5,7 +5,7 @@ import { EVariant } from "../../../types/enums";
 interface SubtitleProps {
   subtitle: string;
   variant?: EVariant;
-  as?: "p" | "span" | "div";
+  as?: "p" | "span";
 }
 
 const Subtitle: React.FC<SubtitleProps> = ({
