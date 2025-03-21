@@ -1,0 +1,79 @@
+.card {
+  width: 390px;
+  overflow: hidden;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .videoContainer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    video {
+      width: 100%;
+      display: block;
+      border: none; 
+    }
+  }
+
+  .playIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    cursor: pointer; 
+  }
+  h6 {
+    font-size: 1rem;
+    margin: 0.5rem;
+    color: #333;
+  }
+  p {
+    font-size: 0.875rem;
+    margin: 0 0.5rem 0.5rem;
+    color: #666;
+  }
+
+  &.variant1 {
+    border-color: #ccc;
+
+    h6 {
+      color: grey;
+      text-transform: capitalize;
+      margin-bottom: 0;
+    }
+
+    p {
+      color: #000;
+      text-transform: capitalize;
+      font-weight: 500;
+      margin-top: 0;
+    }
+  }
+
+  &.variant2 {
+    border-color: #000;
+
+    h6 {
+      color: #ccc; 
+      text-transform: capitalize;
+      margin-bottom: 0;
+    }
+    p {
+      color: #ccc;
+      margin-top: 0;
+    }
+  }
+}

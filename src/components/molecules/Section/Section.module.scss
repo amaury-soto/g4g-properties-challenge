@@ -1,0 +1,31 @@
+.section {
+  max-width: 850px;
+  padding: 24px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  &.variant1 {
+    background-color: #fff;
+    color: #000;
+
+    .headerContainer {
+      align-items: flex-start;
+    }
+  }
+
+  &.variant2 {
+    background-color: #000;
+    color: #fff;
+
+    .headerContainer {
+      align-items: flex-end;
+    }
+  }
+
+  .mediaContainer {
+    display: flex;
+    justify-content: space-around; 
+  }
+}
