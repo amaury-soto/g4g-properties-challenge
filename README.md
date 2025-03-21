@@ -14,33 +14,102 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+# SectionBuilder Component
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The `SectionBuilder` component is a versatile React component designed to create various sections of a web application. It supports different types of content, such as headers, footers, and content sections, along with customizable badges and card items.
 
-### `npm run build`
+## Table of Contents
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Usage](#usage)
+- [Props](#props)
+- [Factory Pattern in SectionBuilder](#FactoryPatterninSectionBuilder)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Import the `SectionBuilder` component into your React application and use it within your render method or functional component:
 
-### `npm run eject`
+```javascript
+import SectionBuilder from "./components/organisms/SectionBuilder/SectionBuilder";
+import { EBadgeIcon, ETypes, EVariant } from "./types/enums";
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+function App() {
+  return (
+    <div>
+      <SectionBuilder
+        variant={EVariant.Variant2}
+        type={ETypes.Header}
+        title="Welcome to the Header"
+        subtitle="Explore our site"
+      />
+      <br />
+      <SectionBuilder
+        variant={EVariant.Variant1}
+        type={ETypes.Content}
+        badgeIcon={EBadgeIcon.Agata}
+        badgeText="Agata Studio"
+        badgeSubtitle="It's time to leave a mark in history"
+        title="Elevate Your Brand"
+        subtitle="Discover how we turn ideas into exceptional digital products."
+        cardItems={[
+          {
+            mediaSrc: "nissan.jpg",
+            isVideo: false,
+            title: "Nissan",
+            subtitle:
+              "Nissan leverages customer insights to enhance experience.",
+          },
+          {
+            mediaSrc: "mcdonald.jpg",
+            isVideo: false,
+            title: "McDonald's",
+            subtitle: "How McDonald's revamped its loyalty program.",
+          },
+        ]}
+      />
+      <br />
+      <SectionBuilder
+        variant={EVariant.Variant2}
+        type={ETypes.Footer}
+        subtitle="Footer - Contact us for more information"
+      />
+    </div>
+  );
+}
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+export default App;
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Props
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+| Prop            | Type                    | Description                                                          |
+| --------------- | ----------------------- | -------------------------------------------------------------------- |
+| `variant`       | `EVariant`              | Determines the styling variant for the section (Variant1, Variant2). |
+| `type`          | `ETypes`                | Defines the type of section (Header, Content, Footer).               |
+| `title`         | `string` (optional)     | Title text for the section header.                                   |
+| `subtitle`      | `string`                | Subtitle text displayed below the title.                             |
+| `badgeIcon`     | `EBadgeIcon` (optional) | The icon to display in the badge.                                    |
+| `badgeText`     | `string` (optional)     | Text to show in the badge.                                           |
+| `badgeSubtitle` | `string` (optional)     | Subtitle text for the badge (only shown in Variant1).                |
+| `cardItems`     | `CardItem[]` (optional) | Array of card items to display in the content section.               |
 
-## Learn More
+## Factory Pattern in SectionBuilder
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The `SectionBuilder` component employs the Factory Pattern to effectively manage the creation of different section types and their variants within the application. This pattern allows for a clean separation of concerns and enhances the maintainability of the codebase.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Key Concepts
+
+1. **Types and Variants**:
+   - **Types**: The `type` prop determines the kind of section to render. The possible values include `ETypes.Header`, `ETypes.Content`, and `ETypes.Footer`. Each type corresponds to a specific section that has its own structure and presentation.
+   - **Variants**: The `variant` prop further customizes the appearance of the section. Variants could dictate different styles or layouts, such as `EVariant.Variant1` and `EVariant.Variant2`.
+
+### Purpose of Using the Factory Pattern
+
+1. **Encapsulation of Object Creation**: The Factory Pattern encapsulates the logic of creating different types of sections based on the provided props. This allows the `SectionBuilder` to remain agnostic about the specific details of each section type or variant.
+
+2. **Simplified Code Management**: By centralizing the creation logic, the code remains organized. If a new type or variant needs to be added in the future, it can be done in one place without modifying the `SectionBuilder` logic.
+
+3. **Loose Coupling**: The `SectionBuilder` does not directly instantiate the section components. Instead, it relies on a factory method, promoting loose coupling and making the code more adaptable to changes.
+
+### Implementation Overview
+
+In the `SectionBuilder`, the factory function is responsible for determining which section to render based on the `type` and `variant` props. Here’s how this might be structured:
