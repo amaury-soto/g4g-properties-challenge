@@ -52,8 +52,8 @@ function App() {
         subtitle="Discover how we turn ideas into exceptional digital products."
         cardItems={[
           {
-            mediaSrc: "nissan.jpg",
             isVideo: false,
+            mediaSrc: "nissan.jpg",
             title: "Nissan",
             subtitle:
               "Nissan leverages customer insights to enhance experience.",
