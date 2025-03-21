@@ -59,10 +59,12 @@ function App() {
               "Nissan leverages customer insights to enhance experience.",
           },
           {
-            mediaSrc: "mcdonald.jpg",
-            isVideo: false,
-            title: "McDonald's",
-            subtitle: "How McDonald's revamped its loyalty program.",
+            isVideo: true,
+            thumbnailSrc: collabsImg,
+            mediaSrc: "./video.mp4",
+            title: "Rewind: Digital Innovations in Action",
+            subtitle:
+              "Relive the milestones of our digital projects in this recap video celebrating our innovative solutions.",
           },
         ]}
       />
