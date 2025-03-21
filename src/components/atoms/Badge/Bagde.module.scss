@@ -1,0 +1,42 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 20px; 
+  font-weight: bold;
+
+
+  border: 2px solid transparent;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+
+  width: 20px;  
+  height: 20px; 
+  
+  img {
+    max-width: 100%; 
+    height: auto;    
+  }
+}
+
+.variant1 {
+  background-color: #000; 
+  border: 2px solid #fff; 
+
+  span {
+    color: #fff; 
+  }
+}
+
+.variant2 {
+  background-color: #fff; 
+  border: 2px solid #000; 
+  
+  span {
+    color: #000; 
+  }
+}
