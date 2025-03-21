@@ -1,13 +1,14 @@
 .subtitle {
   margin: 8px;
-}
-.subtitle--variant1 { 
-  font-size: 1rem;
-  color: #333;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.subtitle--variant2 { 
-  font-size: 1rem; 
-  color: #fff;
+  &--variant1 {
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  &--variant2 {
+    color: #fff;
+  }
+  &.uppercase {
+    text-transform: uppercase;
+  }
 }

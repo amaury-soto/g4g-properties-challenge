@@ -66,7 +66,11 @@ function App() {
       />
       <br />
 
-      <Subtitle subtitle="Reusable custom Components" />
+      <Subtitle
+        subtitle="Reusable custom Components"
+        variant={EVariant.Variant1}
+        fontSize="2rem"
+      />
       <br />
       <SectionBuilder
         variant={EVariant.Variant2}
@@ -81,13 +85,23 @@ function App() {
         subtitle="Footer - Contáctanos para más información"
       />
       <br />
-      <Title title="This is a title" as="h6" />
+      <Title
+        title="This is a title"
+        as="h6"
+        fontSize="4rem"
+        variant={EVariant.Variant1}
+      />
       <Title title="This is a title" as="h5" />
-      <Title title="This is a title" as="h4" />
-      <Title title="This is a title" as="h3" />
+      <Title title="This is a title" as="h4" fontSize="3rem" />
 
-      <Subtitle subtitle="Reusable custom Cards" as="span" />
-      <Subtitle subtitle="Reusable custom Cards" as="p" />
+      <br />
+      <Subtitle
+        subtitle="This is a Subtitle"
+        as="span"
+        fontSize="1rem"
+        variant={EVariant.Variant1}
+      />
+      <Subtitle subtitle="This is a Subtitle" as="p" fontSize="2rem" />
       <Badge
         badgeIcon={EBadgeIcon.Agata}
         text={"Badge text"}

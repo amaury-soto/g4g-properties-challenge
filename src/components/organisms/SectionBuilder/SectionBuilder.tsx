@@ -67,9 +67,14 @@ const SectionBuilder: React.FC<SectionBuilderProps> = ({
                   <Subtitle subtitle={badgeSubtitle} variant={variant} as="p" />
                 )}
               </div>
-              <Title title={title!} variant={variant} />
+              <Title title={title!} variant={variant} fontSize="4rem" />
             </div>
-            <Subtitle subtitle={subtitle} variant={variant} as="p" />
+            <Subtitle
+              subtitle={subtitle}
+              variant={variant}
+              as="p"
+              uppercase={variant === EVariant.Variant1 ? true : false}
+            />
             <div className={styles.mediaContainer}>
               {cardItems.map((item, index) => (
                 <Card
