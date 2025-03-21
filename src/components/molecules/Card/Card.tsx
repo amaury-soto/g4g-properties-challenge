@@ -33,14 +33,14 @@ const Card: React.FC<CardProps> = ({
   };
 
   return (
-    <div className={`${styles.card} ${styles[variant]}`}>
+    <div className={`${styles.card} ${styles[`card--${variant}`]}`}>
       {isVideo ? (
-        <div className={styles.videoContainer}>
+        <div className={styles.card__videoContainer}>
           {!isPlaying && thumbnailSrc && (
             <img
               src={thumbnailSrc}
               alt="thumbnail"
-              className={styles.thumbnail}
+              className={styles.card__thumbnail}
               onClick={handlePlay}
             />
           )}
@@ -58,13 +58,13 @@ const Card: React.FC<CardProps> = ({
             <img
               src={playIcon}
               alt="play"
-              className={styles.playIcon}
+              className={styles.card__playIcon}
               onClick={handlePlay}
             />
           )}
         </div>
       ) : (
-        <img src={mediaSrc} alt="media-src" />
+        <img src={mediaSrc} alt="media-src" className={styles.card__media} />
       )}
       <Title title={title} variant={variant} as="h6" />
       <Subtitle subtitle={subtitle} variant={variant} as="p" />

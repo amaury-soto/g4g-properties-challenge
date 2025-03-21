@@ -15,7 +15,11 @@ const Title: React.FC<TitleProps> = ({
 }) => {
   const Tag = as;
 
-  return <Tag className={`${styles.title} ${styles[variant]}`}>{title}</Tag>;
+  return (
+    <Tag className={`${styles.title} ${styles[`title--${variant}`]}`}>
+      {title}
+    </Tag>
+  );
 };
 
 export default Title;

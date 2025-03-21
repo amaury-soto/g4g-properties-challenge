@@ -4,16 +4,14 @@ import nissanImg from "../src/assets/nissan.jpg";
 import macImg from "../src/assets/mcdonald.jpg";
 import collabsImg from "../src/assets/collabs.png.jpg";
 import { EBadgeIcon, ETypes, EVariant } from "./types/enums";
+import Card from "./components/molecules/Card/Card";
+import Subtitle from "./components/atoms/Subtitle/Subtitle";
+import Title from "./components/atoms/Title/Title";
+import Badge from "./components/atoms/Badge/Badge";
 
 function App() {
   return (
-    <div>
-      <SectionBuilder
-        variant={EVariant.Variant2}
-        type={ETypes.Header}
-        title="Bienvenido a un Header"
-        subtitle="Explora nuestro sitio"
-      />
+    <div className="App">
       <br />
       <SectionBuilder
         variant={EVariant.Variant1}
@@ -67,11 +65,61 @@ function App() {
         ]}
       />
       <br />
+
+      <Subtitle subtitle="Reusable custom Components" />
+      <br />
+      <SectionBuilder
+        variant={EVariant.Variant2}
+        type={ETypes.Header}
+        title="Bienvenido a un Header"
+        subtitle="Explora nuestro sitio"
+      />
+      <br />
       <SectionBuilder
         variant={EVariant.Variant1}
         type={ETypes.Footer}
         subtitle="Footer - Contáctanos para más información"
       />
+      <br />
+      <Title title="This is a title" as="h6" />
+      <Title title="This is a title" as="h5" />
+      <Title title="This is a title" as="h4" />
+      <Title title="This is a title" as="h3" />
+
+      <Subtitle subtitle="Reusable custom Cards" as="span" />
+      <Subtitle subtitle="Reusable custom Cards" as="p" />
+      <Badge
+        badgeIcon={EBadgeIcon.Agata}
+        text={"Badge text"}
+        variant={EVariant.Variant1}
+      />
+      <br />
+      <Badge
+        badgeIcon={EBadgeIcon.Carraci}
+        text={"Badge text"}
+        variant={EVariant.Variant2}
+      />
+      <br />
+      <br />
+
+      <br />
+      <div>
+        <div className={"customCardsContainer"}>
+          <Card
+            mediaSrc={macImg}
+            title="Image title"
+            subtitle="Image Subtitle"
+          />
+          <br />
+          <Card
+            mediaSrc="./video.mp4"
+            thumbnailSrc={collabsImg}
+            isVideo
+            title="Video title"
+            subtitle="Video subtitle"
+          />
+        </div>
+      </div>
     </div>
   );
 }
